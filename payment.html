@@ -9,28 +9,57 @@
     <h1>Payment</h1>
     <form action="/payment" method="post">
       <div>
-        <label for="name">Nama Pemegang Kartu</label>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div>
+        <label for="method">Metode Pembayaran</label>
+        <select id="method" name="method" required>
+          <option value="">Pilih metode</option>
+          <option value="card">Kartu Kredit/Debit</option>
+          <option value="ewallet">E-Wallet</option>
+          <option value="bank_transfer">Transfer Bank</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="name">Nama Pemegang Kartu / Rekening</label>
         <input type="text" id="name" name="name" required />
       </div>
 
       <div>
-        <label for="card_number">Nomor Kartu</label>
-        <input type="text" id="card_number" name="card_number" required />
+        <label for="card_number">Nomor Kartu / Rekening</label>
+        <input type="text" id="card_number" name="card_number" />
       </div>
 
       <div>
         <label for="expiry">Tanggal Kadaluarsa</label>
-        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required />
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
       </div>
 
       <div>
         <label for="cvv">CVV</label>
-        <input type="text" id="cvv" name="cvv" required />
+        <input type="text" id="cvv" name="cvv" />
       </div>
 
       <div>
         <label for="amount">Jumlah Pembayaran</label>
         <input type="number" id="amount" name="amount" required />
+      </div>
+
+      <div>
+        <label for="currency">Mata Uang</label>
+        <select id="currency" name="currency" required>
+          <option value="IDR">IDR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="note">Catatan Pembayaran (opsional)</label>
+        <textarea id="note" name="note"></textarea>
       </div>
 
       <button type="submit">Bayar</button>
